@@ -16,4 +16,6 @@ main.py initializes a class named DataReader also located in the root folder, it
 -- object.run('data_1.json', 'schema_2.json')
  no need adding their respective directories as it has already been predefined in the DataReader class.
 
+# Note
+As instructed the program only resolves intergers, strings, enums, and arrays thereby ignoring other datatypes
 # Run python main.py to execute program.
