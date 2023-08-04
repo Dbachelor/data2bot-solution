@@ -3,7 +3,6 @@ import json
 class DataReader:
     
     def run(self, sourceFile="data_1.json", destinationFile="schema_1.json"):
-        print(1)
         data = self.fileToJson("data/"+sourceFile)
         output = self.processData(data)
         self.writeTofile("schema/"+destinationFile, output)
@@ -31,10 +30,10 @@ class DataReader:
                     data_type = 'string'
                 case 'int' | 'float':
                     data_type = 'integer'
-                case 'bool':
-                    data_type = 'boolean'
-            output = {item:{"type": data_type, "tag": "", "description": "","required": False}}
-            final_output.update(output)
+                
+            if (data_type != ''):
+                output = {item:{"type": data_type, "tag": "", "description": "","required": False}}
+                final_output.update(output)
         return final_output
                     
         
